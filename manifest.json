@@ -1,0 +1,9 @@
+{
+    "name":"Ptime Extension",
+    "description":"Simple Timer Extension",
+    "version":"0.0.1",
+    "manifest_version":3,
+    "action":{
+        "default_popup": "src/index.html"
+    }
+}
