@@ -5,49 +5,93 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background: linear-gradient(135deg, #607d8b, #b0bec5);
+    font-family: Arial, sans-serif;
 }
 
 .container {
-    background-color: rgba(213, 194, 160, 0.498);
-    width: 250px;
-    height: 250px;
+    background: linear-gradient(135deg, #607d8b, #b0bec5);
+    width: 260px;
     padding: 20px;
-    border: 1px solid #000000;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     text-align: center;
 }
 
 #timer-container {
-    padding: 20px;
+    padding: 15px;
     margin: 20px 0;
+    background: linear-gradient(135deg, #607d8b, #b0bec5);
+    border-radius: 8px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 #timer {
-    color: black;
+    color: #333333;
     font-family: 'Digital-7', sans-serif;
-    font-size: 50px;
+    font-size: 48px;
+    letter-spacing: 1px;
 }
 
 button {
-    font-size: 20px;
-    padding: 5px 10px;
-    margin: 5px;
-    background-color: #fff1c09d; 
-    color: rgb(0, 0, 0);
-    border: 1px solid black;
-    border-radius: 5px;
+    font-size: 14px;
+    padding: 6px 12px;
+    margin: 6px;
+    background-color: #607d8b;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.1s;
+    transition: background-color 0.3s, box-shadow 0.2s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 button:hover {
-    background-color: #ffffff;
+    background-color: #455a64;
 }
 
 button:active {
-    background-color: #696968;
-    transform: translateY(2px);
+    background-color: #263238;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .hidden {
-    display : none;
+    display: none;
+}
+
+#edit-wrapper .input-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#edit-wrapper .input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#edit-wrapper input[type="number"] {
+    width: 60px;
+    padding: 6px;
+    font-size: 14px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    text-align: center;
+    background-color: #f9f9f9;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 5px;
+}
+
+#edit-wrapper label {
+    font-size: 14px;
+    color: #555555;
+    margin-top: 5px;
+}
+
+/* Save Button Centered */
+#edit-wrapper button#save {
+    margin: 0 auto;
+    display: block;
 }
