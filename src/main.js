@@ -10,8 +10,6 @@ const editTimerButton = document.getElementById("edit-timer");
 const resetTimerButton = document.getElementById("reset-timer");
 
 
-
-
 // Edit Wrapper Related DOM Elements
 const editWrapper = document.getElementById("edit-wrapper");
 const saveButton = document.getElementById("save");
