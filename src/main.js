@@ -2,8 +2,9 @@ let hours = 0;
 let minutes = 25;
 let seconds = 59;
 let hoursInput = 0;
-let minutesInput = 59;
+let minutesInput = 25;
 let secondsInput = 59;
+let timerInterval = null ;
 
 
 // Timer Wrapper Related DOM Elements
@@ -23,12 +24,33 @@ const saveButton = document.getElementById("save");
 
 // Timer Related Event Listeners
 triggerButton.addEventListener("click",()=>{
-    if(triggerButton.textContent == "Start"){
-        triggerButton.textContent = "Pause";
+    if(triggerButton.textContent === "Start"){
+        triggerButton.textContent = "Pause"; 
+        timerInterval = setInterval(() => {
+            if(seconds === 0 && minutes === 0 & hours === 0){
+                triggerButton.textContent = "Start";
+                clearInterval(timerInterval);
+                alert("Timer End!!")
+            }else{
+                if(seconds === 0){
+                    seconds = 59;
+                    if(minutes === 0){
+                        minutes = 59;
+                        hours--;
+                    }else{
+                        minutes--;
+                    }
+                }else{
+                    seconds--;
+                }
+            }
+            updateTimerDisplay();
+        }, 1000);
     }else{
+        clearInterval(timerInterval);
         triggerButton.textContent = "Start";
     }
-})
+});
 
 editTimerButton.addEventListener("click", () => {
     timerWrapper.classList.add("hidden");
@@ -46,7 +68,7 @@ saveButton.addEventListener("click", () => {
     editWrapper.classList.add("hidden");
     timerWrapper.classList.remove("hidden");
     hoursInput = parseInt(document.getElementById("hours").value);
-    minutesInput = parseInt(document.getElementById("seconds").value);
+    minutesInput = parseInt(document.getElementById("minutes").value);
     secondsInput = parseInt(document.getElementById("seconds").value);
     if (isNaN(hoursInput) || isNaN(minutesInput) || isNaN(secondsInput)) {
         hoursInput = 0;
@@ -59,15 +81,9 @@ saveButton.addEventListener("click", () => {
 
 
 
-
-
-
-
-
 function formatTime(unit) {
-    return String(unit).padStart(2, '0');
+    return String(unit).padStart(2, "0")
 }
-
 
 function updateTimerDisplay() {
     const formattedHours = formatTime(hours);
@@ -76,7 +92,6 @@ function updateTimerDisplay() {
 
     const formattedTime = `${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
     timerText.textContent = formattedTime;
-    triggerButton.textContent = "Start";
 }
 
 
@@ -84,5 +99,7 @@ function resetToInput() {
     hours = hoursInput;
     minutes = minutesInput;
     seconds = secondsInput;
+    clearInterval(timerInterval);
     updateTimerDisplay();
+    triggerButton.textContent = "Start";
 }
