@@ -18,15 +18,24 @@
         <button id="reset-timer">Reset</button>
     </div>
     <div id="edit-wrapper" class="container hidden">
-            <h1>Ptime Extension</h1>
-            <h2>Edit Timer</h2>
-            <label for="hours">Hours</label>
-            <input type="number" name="hours" id="hours" min="0" max="23" value="0">
-            <label for="minutes">Minutes</label>
-            <input type="number" name="minutes" id="minutes" min="0" max="59" value="59">
-            <label for="seconds">Seconds</label>
-            <input type="number" name="seconds" id="seconds" min="0" max="59" value="59">
-            <button id="save">Save</button>
+        <h1>Ptime Extension</h1>
+        <h2>Edit Timer</h2>
+        <div class="input-row">
+            <div class="input-group">
+                <input type="number" name="hours" id="hours" min="0" max="23" value="0">
+                <label for="hours">Hours</label>
+            </div>
+            <div class="input-group">
+                <input type="number" name="minutes" id="minutes" min="0" max="59" value="59">
+                <label for="minutes">Minutes</label>
+            </div>
+            <div class="input-group">
+                <input type="number" name="seconds" id="seconds" min="0" max="59" value="59">
+                <label for="seconds">Seconds</label>
+            </div>
+        </div>
+        <button id="save">Save</button>
     </div>
+    
 </body>
 </html>
