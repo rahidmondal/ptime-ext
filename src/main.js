@@ -13,6 +13,7 @@ const resetTimerButton = document.getElementById("reset-timer");
 // Edit Wrapper Related DOM Elements
 const editWrapper = document.getElementById("edit-wrapper");
 const saveButton = document.getElementById("save");
+const returnButton = document.getElementById("returnButton");
 
 
 // Timer Related Event Listeners
@@ -62,9 +63,13 @@ saveButton.addEventListener("click", () => {
     editWrapper.classList.add("hidden");
     timerWrapper.classList.remove("hidden");
     refreshTimer();
-})
+});
 
-
+// Return Button Event Listener
+returnButton.addEventListener("click", () => {
+    editWrapper.classList.add("hidden"); // Hide edit
+    timerWrapper.classList.remove("hidden"); // Show timer
+});
 
 function formatTime(unit) {
     return String(unit).padStart(2, "0")
