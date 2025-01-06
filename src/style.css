@@ -95,3 +95,10 @@ button:active {
     margin: 0 auto;
     display: block;
 }
+
+#returnButton {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+}
+
