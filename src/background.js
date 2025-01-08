@@ -1,10 +1,27 @@
 let timerState = {
     hours: 0,
-    minutes: 0,
-    seconds: 0,
+    minutes: 55,
+    seconds: 59,
     isRunning: false,
     intervalId: null,
 };
+
+chrome.runtime.onInstalled.addListener(() => {
+    chrome.storage.local.get("timerState", (result) => {
+        if (!result.timerState) {
+            chrome.storage.local.set({ timerState });
+        } else {
+            timerState = result.timerState;
+        }
+    });
+});
+
+chrome.storage.local.get("timerState", (result) => {
+    if (result.timerState) {
+        timerState = result.timerState;
+    }
+});
+
 
 function startTimer() {
     if (timerState.isRunning) return;
