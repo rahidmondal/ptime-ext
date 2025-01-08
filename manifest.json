@@ -1,13 +1,15 @@
 {
-    "name":"Ptime Extension",
-    "description":"Simple Timer Extension",
-    "version":"0.2.6",
-    "manifest_version":3,
-    "action":{
+    "name": "Ptime Extension",
+    "description": "Simple Timer Extension",
+    "version": "0.2.7",
+    "manifest_version": 3,
+    "action": {
         "default_popup": "src/index.html"
     },
-    "background":{
-        "service_worker":"src/background.js"
+    "background": {
+        "service_worker": "src/background.js"
     },
-    "permissions":["storage"]
+    "permissions": [
+        "storage"
+    ]
 }
