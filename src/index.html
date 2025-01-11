@@ -4,14 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ptime Extension</title>
+    <title>Ptime Extension</title>
     <link rel="stylesheet" href="./style.css">
+    <script src="./main.js" defer></script>
     <script src="./main.js" defer></script>
 </head>
 <body>
     <div id="timer-wrapper" class="container">
         <h1>Ptime Extension</h1>
         <div id="timer-container">
-            <div id="timer">00:25:59</div>
+            <div id="timer">00:55:59</div>
         </div>
         <button id="trigger">Start</button>
         <button id="edit-timer">Edit</button>
@@ -20,13 +22,14 @@
     <div id="edit-wrapper" class="container hidden">
         <h1>Ptime Extension</h1>
         <h2>Edit Timer</h2>
+        <button id="returnButton">&larr;</button>
         <div class="input-row">
             <div class="input-group">
                 <input type="number" name="hours" id="hours" min="0" max="23" value="0">
                 <label for="hours">Hours</label>
             </div>
             <div class="input-group">
-                <input type="number" name="minutes" id="minutes" min="0" max="59" value="59">
+                <input type="number" name="minutes" id="minutes" min="0" max="59" value="55">
                 <label for="minutes">Minutes</label>
             </div>
             <div class="input-group">
@@ -36,6 +39,12 @@
         </div>
         <button id="save">Save</button>
     </div>
+    <div id="custom-alert" class="hidden">
+        <div class="modal">
+          <p id="alert-message">Time is up!</p>
+          <button id="alert-close">OK</button>
+        </div>
+    </div>      
     
 </body>
 </html>
