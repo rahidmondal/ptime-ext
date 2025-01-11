@@ -8,6 +8,8 @@ const editWrapper = document.getElementById("edit-wrapper");
 const saveButton = document.getElementById("save");
 const returnButton = document.getElementById("returnButton");
 
+const alarmSound = new Audio("./alarm.mp3");
+
 triggerButton.addEventListener("click", () => {
   if (triggerButton.textContent === "Start") {
     chrome.runtime.sendMessage({ type: "startTimer" });
@@ -94,3 +96,26 @@ function resetEditValues() {
 
 setInterval(refreshTimer, 1000);
 refreshTimer();
+
+function showCustomAlert(message) {
+  const customAlert = document.getElementById("custom-alert");
+  const alertMessage = document.getElementById("alert-message");
+  const closeButton = document.getElementById("alert-close");
+
+  alertMessage.textContent = message;
+
+  customAlert.classList.remove("hidden");
+
+  closeButton.addEventListener("click", () => {
+    customAlert.classList.add("hidden");
+    alarmSound.pause();
+    alarmSound.currentTime = 0;
+  });
+}
+
+chrome.runtime.onMessage.addListener((message) => {
+  if (message.type === "playAlarm") {
+    alarmSound.play();
+    showCustomAlert("Time is up!");
+  }
+});
