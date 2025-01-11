@@ -90,7 +90,6 @@ button:active {
     margin-top: 5px;
 }
 
-/* Save Button Centered */
 #edit-wrapper button#save {
     margin: 0 auto;
     display: block;
@@ -102,3 +101,50 @@ button:active {
     left: 4px;
 }
 
+#custom-alert {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
+  
+  #custom-alert.hidden {
+    display: none;
+  }
+  
+  .modal {
+    background-color: #d0cece;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    max-width: 300px;
+  }
+  
+  .modal p {
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .modal button {
+    background-color: #607d8b;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .modal button:hover {
+    background-color: #455a64;
+  }
+  

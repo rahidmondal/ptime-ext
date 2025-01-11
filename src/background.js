@@ -53,6 +53,7 @@ function startTimer() {
       clearInterval(timerState.intervalId);
       timerState.isRunning = false;
       chrome.runtime.sendMessage({ type: "timerEnd" });
+      chrome.runtime.sendMessage({ type: "playAlarm" });
     } else {
       if (timerState.seconds === 0) {
         timerState.seconds = 59;
