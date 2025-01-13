@@ -15,20 +15,19 @@ let editState = {
 };
 
 chrome.runtime.onInstalled.addListener(() => {
-  chrome.storage.local.get(["timerState", "editState"], (result) => {
-    if (!result.timerState) {
-      chrome.storage.local.set({ timerState });
+  chrome.storage.local.get(["timerState", "editState"],(result) => {
+    if(!result.timerState){
+      chrome.storage.local.set({timerState});
+    }else{
+      timerState = result.timerState;
     }
-    if (!result.editState) {
-      chrome.storage.local.set({ editState });
-    }
-  });
-});
 
-chrome.storage.local.get("timerState", (result) => {
-  if (result.timerState) {
-    timerState = result.timerState;
-  }
+    if(!result.editState){
+      chrome.storage.local.set({editState});
+    }else{
+      editState = result.editState;
+    }
+  })
 });
 
 function startTimer() {
@@ -78,12 +77,15 @@ function pauseTimer() {
 }
 
 function resetTimer() {
-  if (timerState.intervalId) clearInterval(timerState.intervalId);
-  timerState.isRunning = false;
-  timerState.hours = editState.hours || 0;
-  timerState.minutes = editState.minutes || 0;
-  timerState.seconds = editState.seconds || 0;
-  updateStorage();
+  chrome.storage.local.get("editState", (result) => {
+    const savedEditState = result.editState || editState;
+    if(timerState.intervalId) clearInterval(timerState.intervalId);
+    timerState.isRunning = false;
+    timerState.hours = savedEditState.hours;
+    timerState.minutes = savedEditState.minutes;
+    timerState.seconds = savedEditState.seconds;
+    updateStorage();
+  })
 }
 
 function updateStorage() {
