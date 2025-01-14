@@ -16,7 +16,8 @@
     },
     "permissions": [
         "storage",
-        "windows"
+        "windows",
+        "alarms"
     ],
     "icons": {
         "16": "src/logo16.png",
