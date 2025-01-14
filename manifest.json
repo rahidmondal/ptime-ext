@@ -15,7 +15,8 @@
         "service_worker": "src/background.js"
     },
     "permissions": [
-        "storage"
+        "storage",
+        "windows"
     ],
     "icons": {
         "16": "src/logo16.png",
