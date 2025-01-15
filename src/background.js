@@ -41,6 +41,22 @@ chrome.runtime.onInstalled.addListener(() => {
       editState = result.editState;
     }
   });
+  chrome.alarms.create("checkTimer", { periodInMinutes: 1/60 });
+});
+
+chrome.alarms.onAlarm.addListener((alarm) => {
+  if (alarm.name === "checkTimer") {
+    chrome.storage.local.get("timerState", (result) => {
+      if (result.timerState && result.timerState.isRunning) {
+        const totalSeconds = result.timerState.hours * 3600 + 
+                           result.timerState.minutes * 60 + 
+                           result.timerState.seconds;
+        if (totalSeconds <= 10) {
+          chrome.action.openPopup();
+        }
+      }
+    });
+  }
 });
 
 chrome.windows.onRemoved.addListener((windowId) => {
