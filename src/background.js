@@ -104,12 +104,6 @@ function startTimer() {
     timerState.isRunning = true;
 
     timerState.intervalId = setInterval(() => {
-      const totalSeconds = timerState.hours * 3600 + 
-                        timerState.minutes * 60 + 
-                        timerState.seconds;
-      if (totalSeconds <= 10) {
-        chrome.action.openPopup();
-      }
       if (
         timerState.seconds === 0 &&
         timerState.minutes === 0 &&
