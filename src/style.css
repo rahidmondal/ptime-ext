@@ -28,7 +28,7 @@ body {
 
 #timer {
     color: #333333;
-    font-family: 'Digital-7', sans-serif;
+    font-family: 'Courier New', Courier, monospace, sans-serif;
     font-size: 48px;
     letter-spacing: 1px;
 }
@@ -96,6 +96,7 @@ button:active {
 }
 
 #returnButton {
+    background-color: #536d7a;
     position: absolute;
     top: 4px;
     left: 4px;
