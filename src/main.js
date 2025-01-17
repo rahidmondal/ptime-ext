@@ -9,6 +9,7 @@ const saveButton = document.getElementById("save");
 const returnButton = document.getElementById("returnButton");
 
 const alarmSound = new Audio("./resource/alarm.mp3");
+
 triggerButton.addEventListener("click", () => {
   if (triggerButton.textContent === "Start") {
     chrome.runtime.sendMessage({ type: "startTimer" });
@@ -93,9 +94,6 @@ function resetEditValues() {
   });
 }
 
-setInterval(refreshTimer, 1000);
-refreshTimer();
-
 function showCustomAlert(message) {
   const customAlert = document.getElementById("custom-alert");
   const alertMessage = document.getElementById("alert-message");
@@ -118,3 +116,6 @@ chrome.runtime.onMessage.addListener((message) => {
     showCustomAlert("Time is up!");
   }
 });
+
+setInterval(refreshTimer, 1000);
+refreshTimer();
