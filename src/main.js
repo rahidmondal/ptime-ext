@@ -8,8 +8,7 @@ const editWrapper = document.getElementById("edit-wrapper");
 const saveButton = document.getElementById("save");
 const returnButton = document.getElementById("returnButton");
 
-const alarmSound = new Audio("./alarm.mp3");
-
+const alarmSound = new Audio("./resource/alarm.mp3");
 triggerButton.addEventListener("click", () => {
   if (triggerButton.textContent === "Start") {
     chrome.runtime.sendMessage({ type: "startTimer" });
