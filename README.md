@@ -8,6 +8,7 @@
 - Customize timer settings (hours, minutes, seconds).
 - Digital clock interface.
 - Option to change timer values through an editable input screen.
+- Alarm notification with sound and a custom alert modal when the timer reaches zero.
 
 ## Installation
 1. Download or clone the repository to your local machine.
@@ -21,9 +22,12 @@
 2. Press Start to begin the timer, and Pause to stop it.
 3. Click Reset to reset the timer to the last saved value.
 4. To modify the timer's settings, click the Edit button, input new values for hours, minutes, and seconds, and click Save.
+5. The timer will now stay in focus when it has 10 seconds or less remaining, ensuring you never miss the countdown.
 
 ## Permissions
 - storage: Used to store and retrieve the timer state.
+- windows: Used to manage and focus the extension window during countdown.
+- alarms: Used to schedule and manage timer functionality.
 
 ## License
 
