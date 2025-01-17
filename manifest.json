@@ -1,14 +1,14 @@
 {
+    "manifest_version": 3,
     "name": "Ptime Extension",
     "description": "Simple Timer Extension",
-    "version": "0.4.0",
-    "manifest_version": 3,
+    "version": "0.4.1",
     "action": {
         "default_popup": "src/index.html",
         "default_icon": {
-            "16": "src/logo16.png",
-            "48": "src/logo48.png",
-            "128": "src/logo128.png"
+            "16": "src/resource/logo16.png",
+            "48": "src/resource/logo48.png",
+            "128": "src/resource/logo128.png"
         }
     },
     "background": {
@@ -20,8 +20,8 @@
         "alarms"
     ],
     "icons": {
-        "16": "src/logo16.png",
-        "48": "src/logo48.png",
-        "128": "src/logo128.png"
+        "16": "src/resource/logo16.png",
+        "48": "src/resource/logo48.png",
+        "128": "src/resource/logo128.png"
     }
 }
