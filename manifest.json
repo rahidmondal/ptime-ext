@@ -2,13 +2,21 @@
     "manifest_version": 3,
     "name": "Ptime Extension",
     "description": "Simple Timer Extension",
-    "version": "0.4.1",
+    "version": "0.5.0",
     "action": {
         "default_popup": "src/index.html",
         "default_icon": {
             "16": "src/resource/logo16.png",
             "48": "src/resource/logo48.png",
             "128": "src/resource/logo128.png"
+        }
+    },
+    "commands": {
+        "_execute_action": {
+            "suggested_key": {
+                "default": "Ctrl+Shift+Y"
+            },
+            "description": "Open Ptime Extension"
         }
     },
     "background": {
