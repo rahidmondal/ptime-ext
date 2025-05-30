@@ -18,7 +18,7 @@
 5. The extension will now be installed and visible in the Chrome toolbar.
 
 ## Usage
-1. Click the extension icon to open the timer interface.
+1. Click the extension icon or Use the shortcut (Ctrl + Shift + Y) to open the timer interface.
 2. Press Start to begin the timer, and Pause to stop it.
 3. Click Reset to reset the timer to the last saved value.
 4. To modify the timer's settings, click the Edit button, input new values for hours, minutes, and seconds, and click Save.

@@ -11,6 +11,14 @@
             "128": "src/resource/logo128.png"
         }
     },
+    "commands": {
+        "_execute_action": {
+            "suggested_key": {
+                "default": "Ctrl+Shift+Y"
+            },
+            "description": "Open Ptime Extension"
+        }
+    },
     "background": {
         "service_worker": "src/background.js"
     },
