@@ -119,3 +119,43 @@ chrome.runtime.onMessage.addListener((message) => {
 
 setInterval(refreshTimer, 1000);
 refreshTimer();
+
+document.addEventListener("keydown", (event) => {
+  if (event.target.tagName === 'INPUT') {
+    if (event.key === "Backspace" && !editWrapper.classList.contains("hidden")) {
+        if (document.activeElement.tagName === 'INPUT' && document.activeElement.closest('#edit-wrapper')) {
+            return;
+        }
+        if (!editWrapper.classList.contains("hidden")) {
+            returnButton.click();
+            event.preventDefault();
+        }
+        return;
+    }
+    return;
+  }
+
+  if (editWrapper.classList.contains("hidden")) {
+    switch (event.key.toUpperCase()) {
+      case "S":
+        triggerButton.click();
+        break;
+      case "P":
+        if (triggerButton.textContent === "Pause") {
+          triggerButton.click();
+        }
+        break;
+      case "R":
+        resetTimerButton.click();
+        break;
+      case "E":
+        editTimerButton.click();
+        break;
+    }
+  } else { 
+    if (event.key === "Backspace") {
+      returnButton.click();
+      event.preventDefault();
+    }
+  }
+});
